@@ -12,6 +12,7 @@ n = length(pulses);
 current_pulse = 0;
 previous_pulse = 0;
 
+% calulate number of pulses
 for i=1:n
   current_pulse = pulses(i);
   if ((current_pulse ~= previous_pulse) && (current_pulse ~= 0))
