@@ -1,5 +1,5 @@
 %SCHMITT TRIGGER
-function [y] = schmidtt_trigger(x,tL,tH)
+function [y] = schmitt_trigger(x,tL,tH)
 
 %x=rand(1,100);
 %x=conv(x,ones(10,1)/10);
