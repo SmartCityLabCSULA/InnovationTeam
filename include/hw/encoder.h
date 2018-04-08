@@ -1,6 +1,6 @@
 #ifndef HW_ENCODER_H
 
-
+namespace encoder{
 // Converts the number of encoder ticks (pulses) into a velocity. This is for a
 // simple incremental rotary encoder (NOT a quadrature encoder).
 //
@@ -18,5 +18,5 @@ double ticks_to_velocity(double circumf, double freq, int ticks, int pulse_per_r
     // NOTE: need to add
     return circumference * freq / (double)(pulse_per_rev * ticks);
 }
-
+} // namespace encoder
 #endif // HW_ENCODER_H
