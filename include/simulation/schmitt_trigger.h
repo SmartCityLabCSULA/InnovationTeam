@@ -1,7 +1,5 @@
 #ifndef SIMULATION_SCHMITT_TRIGGER_H
 
-#include <cmath>
-
 namespace schmitt_trigger
 {
 // Simulates a Schmitt trigger (https://en.wikipedia.org/wiki/Schmitt_trigger)
