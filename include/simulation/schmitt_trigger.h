@@ -45,6 +45,34 @@ void schmitt(double voltage[], double thresh_low, double thresh_high,
     }
 }
 
-//int count_pulses(double wave
+
+/*
+void count_pulses(int wave[], int pulses[], int length)
+{
+    int prev_pulse = 0;
+
+    for (int i =0; i < length; i++)
+    {
+        
+    }
+}
+*/
+
+double count_pulses(int wave[], int length)
+{
+    int num_pulses = 0;
+    int prev_pulse = wave[1];
+    
+    for (int i = 1; i < length; i++)
+    {
+        if (wave[i] != prev_pulse && wave[i] != 0)
+        {
+            num_pulses += 1;
+        }
+
+    }
+
+    return num_pulses;
+}
 } // namespace schmitt_trigger
 #endif // SIMULATION_SCHMITT_TRIGGER_H
