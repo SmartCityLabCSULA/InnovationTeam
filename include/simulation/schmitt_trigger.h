@@ -2,6 +2,8 @@
 
 #include <cmath>
 
+namespace schmitt_trigger
+{
 // Simulates a Schmitt trigger (https://en.wikipedia.org/wiki/Schmitt_trigger).
 // Converts a voltage to a 1 or 0 (high or low) based on the voltage 
 // thresholds.
@@ -18,5 +20,5 @@ int schmitt_trigger(double voltage, double thresh_low, double thresh_high)
 {
     
 }
-
+} // namespace schmitt_trigger
 #endif // SIMULATION_SCHMITT_TRIGGER_H
