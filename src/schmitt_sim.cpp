@@ -31,7 +31,7 @@ int main(int arcg, char *argv[])
     double thresh_low = 0.4;
     double thresh_high = 0.6;
 
-    schmitt_trigger::schmitt(sine_wave, thresh_low, thresh_high, pulses, samples);
+    schmitt_trigger_sim::schmitt(sine_wave, thresh_low, thresh_high, pulses, samples);
     for (int i = 0; i < samples; i++)
     {
         std::cout << time[i] << "," << pulses[i] << std::endl;
@@ -40,7 +40,7 @@ int main(int arcg, char *argv[])
     std::cout << std::endl << std::endl;
 
 
-    int ticks = schmitt_trigger::count_pulses(pulses, samples);
+    int ticks = schmitt_trigger_sim::count_pulses(pulses, samples);
 
     double circumference = 2*M_PI*23.17/2;
     int pulses_per_rev = 4;
