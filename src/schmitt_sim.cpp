@@ -1,7 +1,8 @@
 #include <cmath>
 #include <iostream>
 
-//#include "simulation/hw/schmitt_trigger.h"
+#include "simulation/schmitt_trigger.h"
+#include "hw/encoder.h"
 
 int main(int arcg, char *argv[])
 {
@@ -14,7 +15,7 @@ int main(int arcg, char *argv[])
     double t = 0.0;
 
     // Create the sine wave
-    for (int i = 0; i < samples ; i++)
+    for (int i = 0; i < samples; i++)
     {
         t = double (i);
         t *= sample_rate;
@@ -23,11 +24,30 @@ int main(int arcg, char *argv[])
         std::cout << sine_wave[i] << "," << t << std::endl;
     }
 
+    std::cout << std::endl << std::endl;
+
     // Get the pulses from the sine wave using the Schmitt trigger
-    double pulses[samples];
+    int pulses[samples];
+    double thresh_low = 0.4;
+    double thresh_high = 0.6;
+
+    schmitt_trigger::schmitt(sine_wave, thresh_low, thresh_high, pulses, samples);
+    for (int i = 0; i < samples; i++)
+    {
+        std::cout << time[i] << "," << pulses[i] << std::endl;
+    }
+
+    std::cout << std::endl << std::endl;
 
 
-    // schmitt_trigger::schmitt(
+    int ticks = schmitt_trigger::count_pulses(pulses, samples);
+
+    double circumference = 2*M_PI*23.17/2;
+    int pulses_per_rev = 4;
+    double velocity = encoder::ticks_to_velocity(circumference, frequency,
+                                                 ticks, pulses_per_rev);
+
+    std::cout << "Velocity is " << velocity << std::endl;
 
     return 0;
 }

@@ -16,7 +16,7 @@ namespace schmitt_trigger
 // @length (int): length of the voltage and logic arrays
 //
 void schmitt(double voltage[], double thresh_low, double thresh_high, 
-             double logic[], int length)
+             int logic[], int length)
 {
     bool limit = false;
     for(int i = 0; i < length; i++)
@@ -43,20 +43,7 @@ void schmitt(double voltage[], double thresh_low, double thresh_high,
     }
 }
 
-
-/*
-void count_pulses(int wave[], int pulses[], int length)
-{
-    int prev_pulse = 0;
-
-    for (int i =0; i < length; i++)
-    {
-        
-    }
-}
-*/
-
-double count_pulses(int wave[], int length)
+int count_pulses(int wave[], int length)
 {
     int num_pulses = 0;
     int prev_pulse = wave[1];

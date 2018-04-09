@@ -16,7 +16,7 @@ namespace encoder{
 double ticks_to_velocity(double circumf, double freq, int ticks, int pulse_per_rev)
 {
     // NOTE: need to add
-    return circumference * freq / (double)(pulse_per_rev * ticks);
+    return circumf * freq / (double)(pulse_per_rev * ticks);
 }
 } // namespace encoder
 #endif // HW_ENCODER_H
