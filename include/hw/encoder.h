@@ -1,4 +1,5 @@
 #ifndef HW_ENCODER_H
+#define HW_ENCODER_H
 
 namespace encoder{
 // Converts the number of encoder ticks (pulses) into a velocity. This is for a

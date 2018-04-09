@@ -1,4 +1,5 @@
 #ifndef SIMULATION_SCHMITT_TRIGGER_H
+#define SIMULATION_SCHMITT_TRIGGER_H
 
 namespace schmitt_trigger_sim
 {

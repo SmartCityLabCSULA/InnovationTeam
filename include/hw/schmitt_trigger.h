@@ -1,4 +1,5 @@
 #ifndef HW_SCHMITT_TRIGGER_H
+#define HW_SCHMITT_TRIGGER_H
 
 namespace schmitt_trigger
 {
